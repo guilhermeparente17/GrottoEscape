@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Contador_vida.gd" type="Script" id=1]
+[ext_resource path="res://assets/items.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Control" type="Control"]
+margin_right = 112.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 35.0
+margin_top = 6.0
+margin_right = 85.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "Vidas: 0"
+
+[node name="Sprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 17, 17 )
+scale = Vector2( 2.0625, 2.16563 )
+frames = SubResource( 2 )
